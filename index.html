@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choudhary Harisingh Trading Company - Premium Honey & Export</title>
+    <title>CHS Trading - Premium Honey | Choudhary Harisingh Trading Company</title>
     <style>
         * {
             margin: 0;
@@ -12,25 +12,33 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #2c2c2c;
+            background: #fafaf8;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
         }
 
         /* Navigation */
         nav {
-            background: linear-gradient(135deg, #d4a574 0%, #8b6914 100%);
-            padding: 1rem 0;
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(212, 165, 116, 0.1);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -39,174 +47,271 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #fff;
+            gap: 15px;
+            text-decoration: none;
+            color: #8b6914;
+            font-weight: 800;
+            font-size: 1.5em;
         }
 
         .logo-badge {
-            width: 50px;
-            height: 50px;
-            background: #fff;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #f4d03f 0%, #d4a574 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            color: #8b6914;
-            font-size: 1.3em;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            color: #fff;
+            font-size: 1.2em;
+            box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: #fff;
+            color: #2c2c2c;
             text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+            position: relative;
         }
 
         .nav-links a:hover {
-            opacity: 0.8;
+            color: #d4a574;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #f4d03f, #d4a574);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #f4d03f 0%, #d4a574 100%);
-            color: #fff;
-            padding: 100px 20px;
+            margin-top: 60px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fff8dc 50%, #f4d03f 100%);
+            padding: 100px 40px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(212, 165, 116, 0.1);
+            border-radius: 50%;
         }
 
         .hero-content {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
-            font-size: 3.5em;
+            font-size: 3.8em;
+            font-weight: 800;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            color: #3e2723;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3em;
+            color: #8b6914;
+            margin-bottom: 2rem;
+            font-weight: 500;
         }
 
         .hero p {
-            font-size: 1.3em;
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #8b6914;
-            color: #fff;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: none;
-            cursor: pointer;
             font-size: 1.1em;
+            color: #555;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .cta-button:hover {
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #d4a574 0%, #8b6914 100%);
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.3);
+        }
+
+        .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 35px rgba(212, 165, 116, 0.4);
         }
 
-        /* Main Container */
+        .btn-secondary {
+            background: #fff;
+            color: #d4a574;
+            border: 2px solid #d4a574;
+        }
+
+        .btn-secondary:hover {
+            background: #f4d03f;
+            color: #fff;
+        }
+
+        /* Container */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
         }
 
         /* About Section */
         .about {
-            padding: 80px 20px;
-            background: #f9f9f9;
+            padding: 100px 40px;
+            background: #fff;
         }
 
         .section-title {
-            font-size: 2.5em;
+            font-size: 2.8em;
+            font-weight: 800;
             text-align: center;
-            margin-bottom: 3rem;
-            color: #8b6914;
+            margin-bottom: 1rem;
+            color: #3e2723;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #d4a574;
+            font-size: 1.1em;
+            margin-bottom: 4rem;
+            font-weight: 600;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
         .about-text h2 {
-            font-size: 2em;
-            margin-bottom: 1rem;
+            font-size: 2.2em;
+            margin-bottom: 1.5rem;
             color: #8b6914;
+            font-weight: 800;
         }
 
         .about-text p {
-            margin-bottom: 1rem;
-            font-size: 1.1em;
+            font-size: 1.05em;
+            margin-bottom: 1.5rem;
+            color: #555;
             line-height: 1.8;
         }
 
-        .features {
+        .about-text ul {
             list-style: none;
             margin-top: 2rem;
         }
 
-        .features li {
-            padding: 10px 0;
-            font-size: 1.1em;
-            border-bottom: 1px solid #ddd;
+        .about-text li {
+            padding: 12px 0;
+            font-size: 1.05em;
+            color: #555;
+            border-bottom: 1px solid #f0f0f0;
+            padding-left: 30px;
+            position: relative;
         }
 
-        .features li:before {
-            content: "✓ ";
+        .about-text li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
             color: #d4a574;
             font-weight: bold;
-            margin-right: 10px;
             font-size: 1.3em;
+        }
+
+        .about-image {
+            font-size: 8em;
+            text-align: center;
+            opacity: 0.8;
         }
 
         /* Products Section */
         .products {
-            padding: 80px 20px;
+            padding: 100px 40px;
+            background: #fafaf8;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
 
         .product-card {
             background: #fff;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
         }
 
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.2);
+            border-color: #f4d03f;
         }
 
         .product-icon {
-            font-size: 4em;
+            font-size: 4.5em;
             text-align: center;
-            padding: 2rem 1rem;
-            background: linear-gradient(135deg, #f4d03f 0%, #d4a574 100%);
+            padding: 2.5rem 1rem;
+            background: linear-gradient(135deg, #fef9e7 0%, #f4d03f 100%);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .product-info {
@@ -216,85 +321,118 @@
         .product-info h3 {
             color: #8b6914;
             margin-bottom: 1rem;
-            font-size: 1.5em;
+            font-size: 1.4em;
+            font-weight: 700;
         }
 
         .product-info p {
             color: #666;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 0.95em;
         }
 
         /* Why Choose Us */
         .why-us {
-            background: linear-gradient(135deg, #f4d03f 0%, #d4a574 100%);
-            padding: 80px 20px;
-            color: #fff;
+            background: linear-gradient(135deg, #f4d03f 0%, #fef9e7 100%);
+            padding: 100px 40px;
         }
 
         .why-us-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         .why-us-card {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
 
-        .why-us-card h3 {
+        .why-us-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .why-us-card .icon {
+            font-size: 3em;
             margin-bottom: 1rem;
-            font-size: 1.5em;
+        }
+
+        .why-us-card h3 {
+            color: #8b6914;
+            margin-bottom: 1rem;
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+
+        .why-us-card p {
+            color: #666;
+            line-height: 1.6;
         }
 
         /* Contact Section */
         .contact {
-            padding: 80px 20px;
-            background: #f9f9f9;
+            padding: 100px 40px;
+            background: #fff;
         }
 
-        .contact-content {
+        .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 4rem;
+            margin-top: 4rem;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .contact-item {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             align-items: flex-start;
         }
 
         .contact-icon {
-            font-size: 2em;
-            color: #d4a574;
-            min-width: 50px;
+            font-size: 2.5em;
+            min-width: 60px;
+            text-align: center;
         }
 
         .contact-text h3 {
             color: #8b6914;
             margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-size: 1.2em;
         }
 
         .contact-text p {
             color: #666;
-            font-size: 1.1em;
+            font-size: 1.05em;
+        }
+
+        .contact-text a {
+            color: #d4a574;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-text a:hover {
+            color: #8b6914;
         }
 
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .form-group {
@@ -303,25 +441,27 @@
         }
 
         .form-group label {
-            margin-bottom: 0.5rem;
-            font-weight: bold;
+            margin-bottom: 0.7rem;
+            font-weight: 700;
             color: #8b6914;
+            font-size: 0.95em;
         }
 
         .form-group input,
         .form-group textarea {
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
+            padding: 12px 15px;
+            border: 2px solid #e8e8e8;
+            border-radius: 8px;
             font-family: inherit;
-            font-size: 1em;
-            transition: border-color 0.3s;
+            font-size: 0.95em;
+            transition: all 0.3s;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #d4a574;
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
         }
 
         .form-group textarea {
@@ -332,52 +472,87 @@
         .submit-btn {
             background: linear-gradient(135deg, #d4a574 0%, #8b6914 100%);
             color: #fff;
-            padding: 12px;
+            padding: 14px;
             border: none;
-            border-radius: 5px;
-            font-weight: bold;
+            border-radius: 8px;
+            font-weight: 700;
             cursor: pointer;
-            font-size: 1.1em;
-            transition: transform 0.3s;
+            font-size: 1em;
+            transition: all 0.3s;
+            margin-top: 1rem;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
         }
 
         /* Footer */
         footer {
-            background: #333;
+            background: #2c2c2c;
             color: #fff;
             text-align: center;
-            padding: 2rem;
+            padding: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            font-size: 0.95em;
+        }
+
+        .footer-highlight {
+            color: #f4d03f;
+            font-weight: 700;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                font-size: 0.85em;
+            }
+
+            .hero {
+                padding: 60px 20px;
+                margin-top: 50px;
+            }
+
             .hero h1 {
                 font-size: 2.5em;
             }
 
             .hero p {
-                font-size: 1.1em;
+                font-size: 1em;
             }
 
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9em;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
+            .container, .about, .products, .contact {
+                padding: 60px 20px;
             }
 
             .section-title {
                 font-size: 2em;
+            }
+
+            .about-content,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                font-size: 6em;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
             }
         }
     </style>
@@ -386,10 +561,10 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">
+            <a href="#home" class="logo">
                 <div class="logo-badge">CHS</div>
                 <span>Trading Co.</span>
-            </div>
+            </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -403,8 +578,12 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Premium Honey Production & Export</h1>
-            <p>Pure, Natural, and Organic Honey from Choudhary Harisingh Trading Company</p>
-            <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get in Touch</button>
+            <p class="subtitle">Choudhary Harisingh Trading Company</p>
+            <p>Discover the finest quality, 100% pure and organic honey. Trusted globally for taste, purity, and sustainable beekeeping practices.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get in Touch</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">View Products</button>
+            </div>
         </div>
     </section>
 
@@ -412,23 +591,22 @@
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-title">About Us</h2>
+            <p class="section-subtitle">Excellence in Honey Production Since Day One</p>
             <div class="about-content">
                 <div class="about-text">
                     <h2>Choudhary Harisingh Trading Company</h2>
-                    <p>We are dedicated to producing and exporting the finest quality honey products. With years of experience in beekeeping and honey production, we ensure every batch meets international standards.</p>
-                    <p>Our commitment to purity, quality, and sustainability makes us a trusted partner for honey distribution worldwide.</p>
-                    <ul class="features">
+                    <p>We are passionate about delivering the highest quality honey to customers worldwide. Our commitment to purity, quality, and sustainable practices sets us apart in the industry.</p>
+                    <p>Every jar of honey represents our dedication to excellence and our respect for nature's precious gift.</p>
+                    <ul>
                         <li>100% Pure & Natural Honey</li>
                         <li>International Quality Standards</li>
                         <li>Sustainable Beekeeping Practices</li>
-                        <li>Certified & Tested Products</li>
-                        <li>Reliable Export Services</li>
-                        <li>Competitive Pricing</li>
+                        <li>Certified & Lab-Tested Products</li>
+                        <li>Reliable Export Services Worldwide</li>
+                        <li>Competitive & Fair Pricing</li>
                     </ul>
                 </div>
-                <div style="font-size: 6em; text-align: center; color: #f4d03f;">
-                    🐝
-                </div>
+                <div class="about-image">🍯</div>
             </div>
         </div>
     </section>
@@ -437,6 +615,7 @@
     <section class="products" id="products">
         <div class="container">
             <h2 class="section-title">Our Products</h2>
+            <p class="section-subtitle">Crafted with care, delivered with pride</p>
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-icon">🍯</div>
@@ -470,7 +649,7 @@
                     <div class="product-icon">🏆</div>
                     <div class="product-info">
                         <h3>Premium Grade</h3>
-                        <p>Highest quality honey meeting all international standards. Perfect for commercial and retail distribution.</p>
+                        <p>Highest quality honey meeting all international standards. Perfect for commercial retail distribution.</p>
                     </div>
                 </div>
                 <div class="product-card">
@@ -488,30 +667,37 @@
     <section class="why-us">
         <div class="container">
             <h2 class="section-title">Why Choose Us?</h2>
+            <p class="section-subtitle">Your trusted partner in premium honey</p>
             <div class="why-us-grid">
                 <div class="why-us-card">
-                    <h3>✓ Quality Assured</h3>
-                    <p>Every batch is tested and certified to ensure purity and quality. We maintain the highest standards.</p>
+                    <div class="icon">✓</div>
+                    <h3>Quality Assured</h3>
+                    <p>Every batch is tested and certified. We maintain the highest international standards.</p>
                 </div>
                 <div class="why-us-card">
-                    <h3>✓ Sustainable</h3>
-                    <p>We practice ethical and sustainable beekeeping that protects the environment and bee populations.</p>
+                    <div class="icon">🌍</div>
+                    <h3>Sustainable</h3>
+                    <p>Ethical beekeeping practices that protect the environment and bee populations.</p>
                 </div>
                 <div class="why-us-card">
-                    <h3>✓ Experienced</h3>
-                    <p>With years of experience, we know honey production inside and out. Trust our expertise.</p>
+                    <div class="icon">👥</div>
+                    <h3>Experienced</h3>
+                    <p>Years of expertise in honey production. Trust our knowledge and dedication.</p>
                 </div>
                 <div class="why-us-card">
-                    <h3>✓ Competitive Price</h3>
-                    <p>Get premium quality honey at competitive prices. Bulk discounts available for large orders.</p>
+                    <div class="icon">💰</div>
+                    <h3>Competitive Price</h3>
+                    <p>Premium quality at fair prices. Bulk discounts available for large orders.</p>
                 </div>
                 <div class="why-us-card">
-                    <h3>✓ Global Export</h3>
-                    <p>We handle all export logistics, documentation, and international shipping requirements.</p>
+                    <div class="icon">🚢</div>
+                    <h3>Global Export</h3>
+                    <p>Handle all export logistics, documentation, and international shipping.</p>
                 </div>
                 <div class="why-us-card">
-                    <h3>✓ Customer Support</h3>
-                    <p>Dedicated support team ready to help with your inquiries and orders 24/7.</p>
+                    <div class="icon">📞</div>
+                    <h3>Customer Support</h3>
+                    <p>Dedicated team ready to help with your inquiries and orders.</p>
                 </div>
             </div>
         </div>
@@ -521,20 +707,21 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
+            <p class="section-subtitle">We'd love to hear from you</p>
+            <div class="contact-wrapper">
                 <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon">📞</div>
                         <div class="contact-text">
                             <h3>Phone</h3>
-                            <p><a href="tel:+919166684205" style="color: #666; text-decoration: none;">+91 9166684205</a></p>
+                            <p><a href="tel:+919166684205">+91 9166684205</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">📧</div>
                         <div class="contact-text">
                             <h3>Email</h3>
-                            <p><a href="mailto:anilnaim97@gmail.com" style="color: #666; text-decoration: none;">anilnaim97@gmail.com</a></p>
+                            <p><a href="mailto:anilnaim97@gmail.com">anilnaim97@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -553,7 +740,7 @@
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email">Email Address</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
@@ -572,8 +759,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Choudhary Harisingh Trading Company. All rights reserved.</p>
-        <p>Premium Honey Production & Export | Est. with quality and commitment</p>
+        <p>&copy; 2024 <span class="footer-highlight">Choudhary Harisingh Trading Company</span>. All rights reserved.</p>
+        <p><span class="footer-highlight">Premium Honey Production & Export</span> | Dedicated to Excellence</p>
     </footer>
 
     <script>
@@ -584,13 +771,9 @@
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
 
-            // Create mailto link
             const mailtoLink = `mailto:anilnaim97@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
             
-            // Open default email client
             window.location.href = mailtoLink;
-            
-            // Reset form
             document.querySelector('.contact-form').reset();
             alert('Opening your email client... Please send the message.');
         }
